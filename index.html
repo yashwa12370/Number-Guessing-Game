@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess It! - Number Guessing Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="bg"></div>
+
+  <header>
+    <div class="logo"><span>◈</span> GUESS IT!</div>
+    <div class="top">
+      <div>🏆 <b id="best">0</b></div>
+      <button id="theme">☀</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="tag">NUMBER CHALLENGE</p>
+      <h1>Guess the <span>Secret Number</span></h1>
+      <p class="sub">Think smart. Guess fast. Beat your best score.</p>
+    </section>
+
+    <div class="game">
+
+      <div class="difficulty">
+        <button class="level active" data-max="50">Easy</button>
+        <button class="level" data-max="100">Medium</button>
+        <button class="level" data-max="500">Hard</button>
+      </div>
+
+      <div class="range">
+        <span>1</span>
+        <div class="line"><i id="rangeBar"></i></div>
+        <span id="maxNum">50</span>
+      </div>
+
+      <div class="number">
+        <div class="icon">🎯</div>
+        <h2>What is the number?</h2>
+        <p>I'm thinking of a number between <b>1</b> and <b id="rangeText">50</b></p>
+
+        <div class="inputBox">
+          <input id="guess" type="number" placeholder="00" min="1">
+          <button id="guessBtn">GUESS <span>→</span></button>
+        </div>
+
+        <div id="message">Make your first guess!</div>
+      </div>
+
+      <div class="stats">
+        <div><small>ATTEMPTS</small><strong id="attempts">0 / 10</strong></div>
+        <div><small>SCORE</small><strong id="score">1000</strong></div>
+        <div><small>STREAK</small><strong>🔥 <span id="streak">0</span></strong></div>
+      </div>
+
+      <div class="hint">
+        <span>💡</span>
+        <div><b>Need a hint?</b><small id="hintText">The secret is waiting...</small></div>
+        <button id="hintBtn">HINT</button>
+      </div>
+
+      <button id="newGame">↻ NEW GAME</button>
+    </div>
+
+    <div class="history">
+      <h3>Guess History</h3>
+      <div id="historyList"><span>No guesses yet</span></div>
+    </div>
+  </main>
+
+  <div id="win" class="modal">
+    <div class="modalBox">
+      <div>🎉</div>
+      <h2>YOU GOT IT!</h2>
+      <p>The secret number was <b id="answer"></b></p>
+      <h3>Score: <span id="finalScore"></span></h3>
+      <button id="playAgain">PLAY AGAIN</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
